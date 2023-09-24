@@ -13,32 +13,32 @@
 
     <div class="flex justify-center items-center">
       <textarea
-        id="userInput"
+        id="userText"
         class="border-solid border-4 rounded-2xl border-sky-500 p-3 mb-3"
-        name="w3review"
+        name="userText"
         rows="4"
         cols="50"
-      >
-        At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
-      </textarea>
+        placeholder="Enter text here..."
+      ></textarea>
     </div>
 
     <div class="flex justify-center items-center">
       <button
+        id="encodeBtn"
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mr-6"
       >
         Encode
       </button>
-      <label for="quantity" class="mr-2">Key:</label>
+      <!-- <label for="quantity" class="mr-2">Key:</label> -->
       <input
         type="number"
-        id="key"
+        id="keyInput"
         class="w-2/12 p-2 border-solid border-2 rounded-xl border-sky-500"
-        name="key"
-        min="1"
-        max="5"
+        name="keyInput"
+        placeholder="Key"
       />
       <button
+        id="decodeBtn"
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full ml-6"
       >
         Decode

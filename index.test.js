@@ -1,8 +1,14 @@
-// const { test, expect } = require('@jest/globals');
+const { test, expect } = require('@jest/globals');
+// import encode from 'index.js'; // Adjust the path as needed
+// const encode = require('index.js');
+const encode = require('./index.js'); // Adjust the path as needed
+
+
+// const userText = document.getElementById("userText");
+// userText.value = 'Hello, World';
 
 // Mock the DOM environment
 document.body.innerHTML = `
-<body class="flex flex-col justify-center items-center min-h-screen">
 <h1 class="text-4xl font-bold text-center mb-8">Caesar Cipher</h1>
 
 <div class="flex justify-center items-center">
@@ -38,18 +44,21 @@ document.body.innerHTML = `
     Decode
   </button>
 </div>
-</body>
 `;
 
+// require('./index.js');
 
-require('./index.js'); 
+// const userText = document.getElementById('userText');
+// userText.value = "Hello, World";
 
 test('if user types "Hello World" in the text area, sets the key to 2 and clicks encrypt, \
      the text area changes to "Jgnnq Yqtnf"', () => {
-  userText.value = "Hello World";
-  keyInput.value = 2;
-  encodeBtn.click();
-  expect(userText.value).toBe("Jgnnq Yqtnf");
+  //   document.getElementById("userText").value = "Hello World";
+//   const userText = document.getElementById('userText');
+//   userText.value = 'Hello World';
+  //   encodeBtn.click();
+//   encode(userText.value);
+  expect(encode('Hello World')).toBe('Jgnnq Yqtnf');
 });
 
 // if key === 2, user input === "Jgnnq Yqtnf",  click decrypt, expect output to be "Hello World"
@@ -69,9 +78,6 @@ test('if user types "Hello World" in the text area, sets the key to 2 and clicks
 // if key === 30, user input === "Hello World",  click encrypt, expect output to be "Lipps Asvph"
 
 // if key === 30, user input === "Lipps Asvph",  click decrypt, expect output to be "Hello World"
-
-
-
 
 // const { default: test } = require("node:test"); // NEEDED???
 // const Export = require("./index.js");

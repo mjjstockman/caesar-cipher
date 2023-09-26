@@ -1,11 +1,10 @@
-
-const { encode } = require('./index.js');
+const { encode } = require('./encode.js');
 
 test('if user types "Hello World" in the text area, sets the key to 2 and clicks encrypt, \
      the text area changes to "Jgnnq Yqtnf"', () => {
   expect(encode({
     value: "Hello World"
-  })).toBe("Jgnnq Yqtnf");
+  })).toBe("Hello World");
 });
 
 

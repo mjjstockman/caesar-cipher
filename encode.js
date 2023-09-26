@@ -7,8 +7,3 @@ const encode = () => {
   };
   
   module.exports = { encode };
-
-
-
-
-// module.exports = encode;

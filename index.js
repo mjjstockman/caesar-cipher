@@ -24,6 +24,7 @@ const encode = () => {
 };
 
 encodeBtn.addEventListener("click", function () {
+    console.log("encodeBtn clicked");
   encode(); // Call the encoding function
 });
 

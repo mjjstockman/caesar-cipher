@@ -1,6 +1,6 @@
 import { isPunctuationOrSpace } from "./isPunctuationOrSpace.js";
 
-const encode = (userInput, keyInput) => {
+const decode = (userInput, keyInput) => {
   let result = "";
 
   for (let char of userInput) {
@@ -9,19 +9,18 @@ const encode = (userInput, keyInput) => {
       result += char;
     } else {
       let asciiInt = char.charCodeAt(0);
-      let newAsciiInt = asciiInt + keyInput;
+      let newAsciiInt = asciiInt - keyInput;
 
-      // Check if the new ASCII code is beyond 'z' (122)
       if (asciiInt >= 97 && asciiInt <= 122) {
-        if (newAsciiInt > 122) {
-          // Wrap back to 'a'
-          newAsciiInt = 96 + (newAsciiInt - 122);
+        if (newAsciiInt < 97) {
+          // Wrap back to 'z'
+          newAsciiInt = 123 - (97 - newAsciiInt);
         }
       } else if (asciiInt >= 65 && asciiInt <= 90) {
         // Check for uppercase letters
-        if (newAsciiInt > 90) {
-          // Wrap back to 'A'
-          newAsciiInt = 64 + (newAsciiInt - 90);
+        if (newAsciiInt < 65) {
+          // Wrap back to 'Z'
+          newAsciiInt = 91 - (65 - newAsciiInt);
         }
       }
 
@@ -32,4 +31,4 @@ const encode = (userInput, keyInput) => {
   return result;
 };
 
-export { encode };
+export { decode };

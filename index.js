@@ -1,25 +1,26 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const userText = document.getElementById("userText");
-  const encodeBtn = document.getElementById("encodeButton");
-  const decodeBtn = document.getElementById("decodeButton");
-  const keyInput = document.getElementById("keyInput");
+import { encode } from "./encode.js";
+import { decode } from "./decode.js";
+
+let userText = document.getElementById("userText");
+let encodeBtn = document.getElementById("encodeBtn");
+let decodeBtn = document.getElementById("decodeBtn");
+
+encodeBtn.addEventListener("click", function () {
+  let userInput = userText.value;
+  let key = parseInt(keyInput.value);
+
+  let result = encode(userInput, key);
+  updateText(result);
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    // Select the button element by its id
-    // const myButton = document.getElementById('myButton');
-  
-    // Add a click event listener to the button
-    decodeBtn.addEventListener('click', function () {
-      // Call your function here
-      encode();
-    });
-  });
+decodeBtn.addEventListener("click", function () {
+  let userInput = userText.value;
+  let key = parseInt(keyInput.value);
 
+  let result = decode(userInput, key);
+  updateText(result);
+});
 
-  // userText.focus()
-
-  const encode = () => {
-    return "Jgnnq Yqtnf"
-  };
-
+const updateText = (result) => {
+  userText.value = result;
+};

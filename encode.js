@@ -1,6 +1,6 @@
 import { isPunctuationOrSpace } from "./isPunctuationOrSpace.js";
 
-const encode = (userInput, keyInput) => {
+export function encode(userInput, keyInput) {
   let result = "";
 
   for (let char of userInput) {
@@ -16,6 +16,9 @@ const encode = (userInput, keyInput) => {
         if (newAsciiInt > 122) {
           // Wrap back to 'a'
           newAsciiInt = 96 + (newAsciiInt - 122);
+        } else if (newAsciiInt < 97) {
+          // Wrap back to 'z' if negative key
+          newAsciiInt = 123 - (97 - newAsciiInt);
         }
       } else if (asciiInt >= 65 && asciiInt <= 90) {
         // Check for uppercase letters
@@ -30,6 +33,7 @@ const encode = (userInput, keyInput) => {
     }
   }
   return result;
-};
+}
 
-export { encode };
+// module.exports = { encode };
+export default encode;

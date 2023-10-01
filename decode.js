@@ -1,34 +1,36 @@
 import { isPunctuationOrSpace } from "./isPunctuationOrSpace.js";
 
-const decode = (userInput, keyInput) => {
-  let result = "";
+export function decode(userInput, keyInput) {
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-  for (let char of userInput) {
+  const result = userInput.split("").map((char) => {
     if (isPunctuationOrSpace(char)) {
-      // If it's a punctuation character, leave it unchanged
-      result += char;
-    } else {
-      let asciiInt = char.charCodeAt(0);
-      let newAsciiInt = asciiInt - keyInput;
-
-      if (asciiInt >= 97 && asciiInt <= 122) {
-        if (newAsciiInt < 97) {
-          // Wrap back to 'z'
-          newAsciiInt = 123 - (97 - newAsciiInt);
-        }
-      } else if (asciiInt >= 65 && asciiInt <= 90) {
-        // Check for uppercase letters
-        if (newAsciiInt < 65) {
-          // Wrap back to 'Z'
-          newAsciiInt = 91 - (65 - newAsciiInt);
-        }
-      }
-
-      let newChar = String.fromCharCode(newAsciiInt);
-      result += newChar;
+      // If it's a punctuation character or space, leave it unchanged
+      return char;
     }
-  }
-  return result;
-};
 
-export { decode };
+    const isUpperCase = char === char.toUpperCase();
+    const charLowerCase = char.toLowerCase();
+    const alphabetIndex = alphabet.indexOf(charLowerCase);
+
+    if (alphabetIndex !== -1) {
+      const newIndex = (alphabetIndex - keyInput) % 26;
+
+      // Ensure newIndex is positive
+      const wrappedIndex = (newIndex + 26) % 26;
+
+      const newChar = isUpperCase
+        ? alphabet[wrappedIndex].toUpperCase()
+        : alphabet[wrappedIndex];
+
+      return newChar;
+    }
+
+    // If the character is not a letter, leave it unchanged
+    return char;
+  });
+
+  return result.join("");
+}
+
+export default decode;

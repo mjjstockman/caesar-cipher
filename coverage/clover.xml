@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1696191826344" clover="3.2.0">
+  <project timestamp="1696191826344" name="All files">
+    <metrics statements="33" coveredstatements="31" conditionals="22" coveredconditionals="19" methods="4" coveredmethods="4" elements="59" coveredelements="54" complexity="0" loc="33" ncloc="33" packages="1" files="3" classes="3"/>
+    <file name="decode.js" path="/Users/matthewstockman/Desktop/TDA/caesar/decode.js">
+      <metrics statements="14" coveredstatements="13" conditionals="6" coveredconditionals="5" methods="2" coveredmethods="2"/>
+      <line num="4" count="10" type="stmt"/>
+      <line num="6" count="10" type="stmt"/>
+      <line num="7" count="1461" type="cond" truecount="2" falsecount="0"/>
+      <line num="9" count="245" type="stmt"/>
+      <line num="12" count="1216" type="stmt"/>
+      <line num="13" count="1216" type="stmt"/>
+      <line num="14" count="1216" type="stmt"/>
+      <line num="16" count="1216" type="cond" truecount="1" falsecount="1"/>
+      <line num="17" count="1216" type="stmt"/>
+      <line num="20" count="1216" type="stmt"/>
+      <line num="22" count="1216" type="cond" truecount="2" falsecount="0"/>
+      <line num="26" count="1216" type="stmt"/>
+      <line num="30" count="0" type="stmt"/>
+      <line num="33" count="10" type="stmt"/>
+    </file>
+    <file name="encode.js" path="/Users/matthewstockman/Desktop/TDA/caesar/encode.js">
+      <metrics statements="17" coveredstatements="16" conditionals="16" coveredconditionals="14" methods="1" coveredmethods="1"/>
+      <line num="4" count="10" type="stmt"/>
+      <line num="6" count="10" type="stmt"/>
+      <line num="7" count="1461" type="cond" truecount="2" falsecount="0"/>
+      <line num="9" count="245" type="stmt"/>
+      <line num="11" count="1216" type="stmt"/>
+      <line num="12" count="1216" type="stmt"/>
+      <line num="15" count="1216" type="cond" truecount="4" falsecount="0"/>
+      <line num="16" count="1200" type="cond" truecount="2" falsecount="0"/>
+      <line num="18" count="4" type="stmt"/>
+      <line num="19" count="1196" type="cond" truecount="2" falsecount="0"/>
+      <line num="21" count="4" type="stmt"/>
+      <line num="23" count="16" type="cond" truecount="3" falsecount="1"/>
+      <line num="25" count="16" type="cond" truecount="1" falsecount="1"/>
+      <line num="27" count="0" type="stmt"/>
+      <line num="31" count="1216" type="stmt"/>
+      <line num="32" count="1216" type="stmt"/>
+      <line num="35" count="10" type="stmt"/>
+    </file>
+    <file name="isPunctuationOrSpace.js" path="/Users/matthewstockman/Desktop/TDA/caesar/isPunctuationOrSpace.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="3" count="2922" type="stmt"/>
+      <line num="5" count="2922" type="stmt"/>
+    </file>
+  </project>
+</coverage>
